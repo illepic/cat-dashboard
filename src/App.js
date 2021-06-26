@@ -38,7 +38,6 @@ function App() {
       CAT_API_HEADERS
     );
     const data = await response.json();
-    console.log(data);
     setResults(data);
   };
 
@@ -97,8 +96,11 @@ function App() {
         <div className="left w-1/3 p-4 border border-black">
           {results.map((result) => (
             <div key={result.id}>
-              Name: {result.name}, weight: {result.weight.imperial} lbs,
-              lifespan: {result.life_span} years
+              <ul>
+                <li>Name: {result.name}</li>
+                <li>Weight: {result.weight.imperial} lbs</li>
+                <li>Lifespan: {result.life_span} years</li>
+              </ul>
             </div>
           ))}
         </div>
